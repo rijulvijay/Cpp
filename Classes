@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+class Employee{
+	int id;
+	public:
+
+	void display(){
+		cout<< "ID: " <<id;
+		
+	}	
+};
+
+int main(){
+	
+	Employee obj;
+	obj.display();
+	return 0;
+}
