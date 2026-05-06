@@ -18,8 +18,8 @@ class Employee {
     // 2. Parameterized Constructor (Fixed with 'this->')
     Employee(int id) {
         this->id = id;
-        this->name = "Unknown";
-        this->salary = 0.0;
+        this->name = "Johan";
+        this->salary = 5000.0;
     }
 
     // 3. Multi-parameter Constructor (Required for 'obj3')
@@ -35,20 +35,18 @@ class Employee {
     }
 
     void display() {
-        cout << "ID: " << id << " | Name: " << name << " | Salary: " << salary << endl;
+        cout << "ID: " << id << endl << " Name: "  << name << endl << " Salary: " << salary << endl;
     }
 };
 
 int main() {
     Employee obj;                         // Uses Default
-    Employee obj2(102);                   // Uses 1-param
+    Employee obj2(102);   // Uses 1-param
     Employee obj3(103, "Alice", 6000.0);  // Uses 3-param
 
-    obj.display();
+    obj.display(); 
     obj2.display();
     obj3.display();
-
-    cout << "--- End of Main ---" << endl;
 
     return 0;
 }
