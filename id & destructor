@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Employee {
+    int id;
+    string name;
+    double salary;
+    
+    public:
+    // 1. Default Constructor (Required for 'obj')
+    Employee() {
+        id = 0;
+        name = "Unknown";
+        salary = 0.0;
+    }
+
+    // 2. Parameterized Constructor (Fixed with 'this->')
+    Employee(int id) {
+        this->id = id;
+        this->name = "Unknown";
+        this->salary = 0.0;
+    }
+
+    // 3. Multi-parameter Constructor (Required for 'obj3')
+    Employee(int id, string n, double s) {
+        this->id = id;
+        this->name = n;
+        this->salary = s;
+    }
+
+    // Destructor
+    ~Employee() {
+        cout << "Destructor called for ID: " << id << endl;
+    }
+
+    void display() {
+        cout << "ID: " << id << " | Name: " << name << " | Salary: " << salary << endl;
+    }
+};
+
+int main() {
+    Employee obj;                         // Uses Default
+    Employee obj2(102);                   // Uses 1-param
+    Employee obj3(103, "Alice", 6000.0);  // Uses 3-param
+
+    obj.display();
+    obj2.display();
+    obj3.display();
+
+    cout << "--- End of Main ---" << endl;
+
+    return 0;
+}
