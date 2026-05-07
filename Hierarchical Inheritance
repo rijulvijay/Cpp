@@ -1,0 +1,76 @@
+#include<iostream>
+using namespace std;
+
+
+
+class Employee{
+	
+	public:
+	
+	void guidelines(){
+		cout<<"Maintain the Office Timing." << endl;
+	}
+		
+};
+
+
+class Manager : public Employee{
+	
+	public:
+	
+	void task(){
+		cout<<"Meetings..." << endl;
+	}
+		
+};
+
+
+class Engineer : public Employee{
+	
+	public:
+	
+	void task(){
+		cout<<"Coding..." << endl;
+	}
+		
+};
+
+
+class Admin : public Employee{
+	
+	public:
+	
+	void task(){
+		cout<<"???? ..." << endl;
+	}
+		
+};
+
+
+
+
+
+
+//Driver Code
+int main(){	
+
+
+	Engineer e;
+	Manager m;
+	Admin a;
+	
+
+	e.guidelines();
+	e.task();
+
+	m.guidelines();
+	m.task();
+
+	a.guidelines();
+	a.task();
+	
+	
+	
+	
+	return 0;	
+}
