@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+
+class Company{
+
+    public:
+
+    void companyName(){
+        cout << "Company: TCS" << endl;
+    }
+
+    void message(){
+        cout << "Welcome on BOARD" << endl;
+    }
+};
+
+class College{
+
+    public:
+
+    void collegeName(){
+        cout << "College: ABC" << endl;
+    }
+};
+
+class Intern : public Company, public College{
+
+    public:
+
+    void task(){
+        cout << "Learning & Understanding..." << endl;
+    }
+};
+
+// Driver Code
+int main(){
+
+    Intern i;
+
+    i.companyName();
+    i.message();
+    i.collegeName();
+    i.task();
+
+    return 0;
+}
