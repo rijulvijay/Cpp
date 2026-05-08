@@ -1,0 +1,22 @@
+ #include<iostream>
+ using namespace std;
+ class SCORE{
+ 	private:
+ 		// static int_score
+ 		
+ 		public:
+ 			static int score;
+ 			void updateSCORE(){
+ 				cout<< "\n SCORE: "<<++score;
+			 }
+ };
+ 
+ int SCORE::score=0;
+ 
+ int main(){
+SCORE objA, objB;
+objA.updateSCORE();
+objB.updateSCORE();
+return 0;
+
+ } 	
