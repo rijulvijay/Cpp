@@ -19,7 +19,7 @@ class Array{
 						
 		}
 		
-		void inputArray() {
+		void insertArray() {
 
         cout << "Enter " << N << " elements:\n";
 
@@ -27,7 +27,15 @@ class Array{
             cin >> array[i];
         }
     }
-		
+		void deleteArray(int number){
+		for(int i = 0; i < N; i++) {
+
+		if(array[i]== number){
+			array[i]= -1;
+		break;
+		}
+		}
+		}
 		
 		void printArray() const{
 		for(int i=0; i<N; i++){
@@ -46,11 +54,21 @@ int main(){
 	Array obj(N);
 	obj.createArray();
 
-    obj.inputArray();
+    obj.insertArray();
 
     cout << "Array Elements: ";
 	obj.printArray();
 	
+
+int deleteArray = 0;
+
+    cout << "\nDelete data: ";
+    cin >> deleteArray;
+
+    obj.deleteArray(deleteArray);
+
+    cout << "Updated Array: ";
+    obj.printArray();
 	
 	
 return 0;
