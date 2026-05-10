@@ -1,0 +1,19 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+bool isPallindrome(const string &str){
+	
+	string reversed = str;
+	reverse(reversed.begin(), reversed.end());
+	return str == reversed;
+	}
+int main(){
+	string s= "naman";
+	if (isPallindrome(s))
+	cout<< s << " is a palindrome\n";
+	else 
+		cout<< s << " is not a palindrome\n";
+
+	return 0;
+}
