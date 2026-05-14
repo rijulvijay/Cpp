@@ -1,0 +1,102 @@
+#include<iostream>
+using namespace std;
+
+class LinkedList{
+
+    struct NODE{
+
+        int data;
+        NODE *next;
+
+        NODE(int value){
+            data = value;
+            next = NULL;
+        }
+
+    };
+
+    NODE *head;
+
+public:
+
+    LinkedList(){
+        head = NULL;
+    }
+
+    ~LinkedList(){
+        delete head;
+    }
+
+    void addAtBack(int value){
+
+        NODE *newNode = new NODE(value);
+
+        if(head == NULL){
+            head = newNode;
+        }
+        else{
+
+            NODE *temp = head;
+
+            while(temp->next != NULL){
+                temp = temp->next;
+            }
+
+            temp->next = newNode;
+        }
+    }
+
+    void add(int value){
+        addAtBack(value);
+    }
+
+    // Reverse Linked List
+    void reverse(){
+
+        NODE *prev = NULL;
+        NODE *current = head;
+        NODE *next = NULL;
+
+        while(current != NULL){
+
+            next = current->next;
+            current->next = prev;
+
+            prev = current;
+            current = next;
+        }
+
+        head = prev;
+    }
+
+    void traverse(){
+
+        NODE *temp = head;
+
+        while(temp != NULL){
+
+            cout << temp->data << " ";
+            temp = temp->next;
+        }
+    }
+
+};
+
+int main(){
+
+    LinkedList obj;
+
+    for(int i = 1; i <= 10; i++){
+        obj.add(10 * i);
+    }
+
+    cout << "Original Linked List:\n";
+    obj.traverse();
+
+    obj.reverse();
+
+    cout << "\n\nReversed Linked List:\n";
+    obj.traverse();
+
+    return 0;
+}
